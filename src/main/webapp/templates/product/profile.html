@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order history</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/profile.css" />
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div th:replace="navbar.html :: copy"></div>
+
+
+<div class="container">
+    <article class="card">
+        <header class="card-header"> My Orders</header>
+        <div class="card-body" th:each="cartOrder: ${cartOrders}">
+            <h6>Order ID: <span th:text="${cartOrder.id}"></span></h6>
+            <article class="card">
+                <div class="card-body row">
+                    <div class="col" > <strong>Estimated Delivery time:</strong> <br><span th:text="${cartOrder.date}"></span> </div>
+                    <div class="col"> <strong>Shipping BY:</strong> <br> CODECOOL GUNSHOP SRL, | <i class="fa fa-phone"></i> +1598675986 </div>
+                    <div class="col"> <strong>Status:</strong> <br> Picked by the courier </div>
+                    <div class="col"> <strong>Tracking #:</strong> <br> BD045903594059 </div>
+                </div>
+            </article>
+            <div class="track">
+                <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order confirmed</span> </div>
+                <div class="step active"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Picked by courier</span> </div>
+                <div class="step active"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
+                <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Ready for pickup</span> </div>
+            </div>
+            <hr>
+            <ul class="row" th:each="item: ${cartOrder.items}">
+                <li class="col-md-4">
+                    <figure class="itemside mb-3">
+                        <div class="aside"><img th:attr="src='/static/img/product_' + ${item.product.id} + '.jpg'" class="img-sm border"></div>
+                        <figcaption class="info align-self-center">
+                            <p class="title" th:text="${item.product.name}"></p> <span class="text-muted" th:text="${item.price}">$950 </span><br><span th:text="${item.quantity}"></span>
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </div>
+        <hr> <a href="/" class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i>Home</a>
+    </article>
+</div>
+</body>
+</html>

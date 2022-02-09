@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <!-- Bootstrap components -->
+  <!-- Latest compiled and minified Jquery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+  <!--Latest compiled and minified Popper -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+          integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+          integrity="sha384-B0UglyR+jN6CkvvICO    B2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <!-- End of Bootstrap components -->
+</head>
+<body>
+<div class="container py-5">
+  <!-- For demo purpose -->
+  <div class="row mb-4">
+    <div class="col-lg-8 mx-auto text-center">
+      <h1 class="display-6">Please enter payment details</h1>
+    </div>
+  </div> <!-- End -->
+  <div class="row">
+    <div class="col-lg-6 mx-auto">
+      <div class="card ">
+        <div class="card-header">
+          <!-- Credit card form content -->
+          <div class="tab-content">
+            <!-- credit card info-->
+            <div id="credit-card" class="tab-pane fade show active pt-3">
+              <form role="form" method="post" action="">
+                <div class="form-group"> <label for="username">
+                  <h6>Card Owner</h6>
+                </label> <input type="text" name="card-name" placeholder="Card Owner Name" class="form-control" required/> </div>
+                <div class="form-group"> <label for="cardNumber">
+                  <h6>Card number</h6>
+                </label>
+                  <div class="input-group"> <input type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" maxlength="19"   name="card-number" placeholder="xxxx xxxx xxxx xxxx" class="form-control " required/>
+                    <div class="input-group-append"> <span class="input-group-text text-muted"> <i class="fab fa-cc-visa mx-1"></i> <i class="fab fa-cc-mastercard mx-1"></i> <i class="fab fa-cc-amex mx-1"></i> </span> </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <div class="form-group"> <label><span class="hidden-xs">
+                                                    <h6>Expiration Date</h6>
+                                                </span></label>
+                      <div class="input-group"> <input type="number" placeholder="MM" name="month" class="form-control" required/> <input type="number" placeholder="YY" name="year" class="form-control" required/> </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group mb-4"> <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
+                      <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
+                    </label> <input type="number" class="form-control" required/> </div>
+                  </div>
+                </div>
+                <p><strong>To pay: <span th:text="${cartPrice}"></span>$</strong></p>
+                  <div class="card-footer"> <button type="submit" class="subscribe btn btn-primary btn-block shadow-sm" onchange="location.href='/confirmation'"> Confirm Payment </button>
+              </form>
+            </div>
+          </div> <!-- End -->
+          <!-- End -->
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

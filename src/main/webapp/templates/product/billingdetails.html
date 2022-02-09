@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8" />
+  <meta name="author" content="Codecool" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>Codecool Shop</title>
+
+
+  <!-- Bootstrap components -->
+  <!-- Latest compiled and minified Jquery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+  <!--Latest compiled and minified Popper -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+          integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+          integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <!-- End of Bootstrap components -->
+
+  <link rel="stylesheet" type="text/css" href="/static/css/custom.css" />
+</head>
+<body>
+
+<form action="" method="post">
+
+<div class="row">
+  <!-- IF BILLING INFO EXISTS -->
+    <div class="col-md-8 mb-4" th:if="${shippingInfo}">
+      <div class="card mb-4">
+        <div class="card-header py-3">
+          <h5 class="mb-0">Billing details</h5>
+        </div>
+        <div class="card-body">
+          <form>
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="form6Example1" class="form-control" name="name" th:value="${shippingInfo.name}" required/>
+                  <label class="form-label" for="form6Example1">Name</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="form6Example2" class="form-control" name="email" th:value="${shippingInfo.email}" required/>
+                  <label class="form-label" for="form6Example2">Email</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Text input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="form6Example3" class="form-control" name="phone-number" th:value="${shippingInfo.email}" required/>
+              <label class="form-label" for="form6Example3">Phone number</label>
+            </div>
+
+            <!-- Text input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="form6Example4" class="form-control" name="country" th:value="${shippingInfo.country}" required/>
+              <label class="form-label" for="form6Example4">Country</label>
+            </div>
+
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="number" id="form6Example5" class="form-control" name="zipcode" th:value="${shippingInfo.zipcode}" required/>
+              <label class="form-label" for="form6Example5">Zipcode</label>
+            </div>
+
+            <!-- Number input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="form6Example6" class="form-control" name="shipping-address" th:value="${shippingInfo.shippingAddress}" required/>
+              <label class="form-label" for="form6Example6">Shipping address</label>
+            </div>
+
+            <!-- Number input -->
+            <div class="form-outline mb-4">
+              <input type="text" class="form-control" name="billing-address" th:value="${shippingInfo.billingAddress}" required/>
+              <label class="form-label" for="form6Example6">Billing address</label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  <!-- ELSE -->
+    <div class="col-md-8 mb-4" th:unless="${shippingInfo}">
+      <div class="card mb-4">
+        <div class="card-header py-3">
+          <h5 class="mb-0">Billing details</h5>
+        </div>
+        <div class="card-body">
+          <form>
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="form6Example1" class="form-control" name="name" required/>
+                  <label class="form-label" for="form6Example1">Name</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                  <input type="text" id="form6Example2" class="form-control" name="email" required/>
+                  <label class="form-label" for="form6Example2">Email</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Text input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="form6Example3" class="form-control" name="phone-number" required/>
+              <label class="form-label" for="form6Example3">Phone number</label>
+            </div>
+
+            <!-- Text input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="form6Example4" class="form-control" name="country" required/>
+              <label class="form-label" for="form6Example4">Country</label>
+            </div>
+
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="number" id="form6Example5" class="form-control" name="zipcode" required/>
+              <label class="form-label" for="form6Example5">Zipcode</label>
+            </div>
+
+            <!-- Number input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="form6Example6" class="form-control" name="shipping-address" required/>
+              <label class="form-label" for="form6Example6">Shipping address</label>
+            </div>
+
+            <!-- Number input -->
+            <div class="form-outline mb-4">
+              <input type="text" class="form-control" name="billing-address" required/>
+              <label class="form-label" for="form6Example6">Billing address</label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  <div class="col-md-4 mb-4">
+    <div class="card mb-4">
+      <div class="card-header py-3">
+        <h5 class="mb-0">Summary</h5>
+      </div>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li
+                  class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+            <strong>Products
+            <span th:text="${totalprice}"></span></strong>
+            <div th:each="lineitem: ${lineitems}">
+              <span th:text="${lineitem.product.name} + ' x ' + ${lineitem.quantity}"></span>
+            </div>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+            Shipping
+            <span>FREE</span>
+          </li>
+          <li
+                  class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+            <div>
+              <strong>Total amount</strong>
+              <strong>
+                <p class="mb-0">(including VAT)</p>
+              </strong>
+            </div>
+            <span th:text="${totalprice}"><strong></strong></span>
+          </li>
+        </ul>
+          <button type="submit" class="btn btn-primary btn-lg btn-block" onchange="location.href='/payment'">
+            Go to payment
+          </button>
+
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+<div style="left: 20px">
+  <button class="btn btn-info" onclick="location.href='/save_billing_details'">Save details</button>
+</div>
+
+
+
+</body>
+</html>

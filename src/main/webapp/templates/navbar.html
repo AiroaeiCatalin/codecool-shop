@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:fragment="copy">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="/">
+            <img src="/static/img/codecool-logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            Codecool Shop
+        </a>
+
+        <span class="navbar-text ml-auto cart-container">
+
+            <span th:switch="${user==null}">
+                <span th:case="${true}">
+                    <a href="/register" class="mx-2 text-decoration-none">Register</a>
+                    <a href="/user_login" class="mx-2 text-decoration-none">Login</a>
+                </span>
+
+                <span th:case="*">
+                    <a href="/profile" class="mx-2 text-decoration-none" th:text="${user}"></a>
+                    <a href="/logout" class="mx-2 text-decoration-none">Logout</a>
+                </span>
+            </span>
+
+            <a href="/cart-items" class="text-decoration-none"><i class="fa" style="font-size:24px">&#xf07a;</i><span class="badge badge-warning" id="lblCartCount" hidden>0</span></a>
+        </span>
+    </nav>
+</div>
+
+</body>
+</html>
