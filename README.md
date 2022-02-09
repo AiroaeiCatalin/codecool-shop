@@ -70,7 +70,7 @@ Here's why:
 * [HTML](https://html.spec.whatwg.org/multipage/)
 * [CSS](https://www.w3.org/)
 * [Bootstrap](https://getbootstrap.com/)
-* [Javascript](https://www.npmjs.com/)
+* [Javascript](www.ecma-international.org/publications-and-standards/standards/ecma-262/)
 
 #### Version control
 * [Github](https://www.gtihub.com/)
@@ -87,10 +87,7 @@ This application can be tested by installing all prerequisites, clone the app, r
 ### Prerequisites
 
 All prerequisites must be installed, accordingly to the technologies used in this project, for example:
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+You have to make sure you have the JDK and java 11 installed.
 
 ### Installation
 
