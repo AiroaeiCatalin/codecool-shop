@@ -107,25 +107,25 @@ You have to make sure you have the JDK and java 11 installed.
 Further I will shortly name, describe and visualize some main features of the app.
 ### Customer application
 * Customers can create an account, browse, view and filter through various weapons
-
 ![homepage](https://user-images.githubusercontent.com/37214035/153233522-cd962fa0-2446-4f7d-b52f-310f100a8772.png)
 
 
 * Register
-
 ![register](https://user-images.githubusercontent.com/37214035/153236723-b618fcc3-fb82-4d21-9ba5-4dfee170400a.png
 )
 
 * Log in
 ![login](https://user-images.githubusercontent.com/37214035/153233705-64f56777-14af-4b0f-b0a3-366839af1077.png)
 
-
 * Cart and save cart
 ![cart](https://user-images.githubusercontent.com/37214035/153233906-f8d976cd-9a08-44e1-aba1-842bdd16b859.png)
+
 * Checkout
 ![checkout](https://user-images.githubusercontent.com/37214035/153234015-37152d8c-8da9-418f-a778-83fe8d33a3d7.png)
+
 * Payment
 ![payment](https://user-images.githubusercontent.com/37214035/153234092-485b2a89-40c0-4ad3-84a2-e654c296d641.png)
+
 * Track
 ![Track](https://user-images.githubusercontent.com/37214035/153234154-01e2c58e-2ac6-4973-a42a-cf6657ca51c8.png)
 
