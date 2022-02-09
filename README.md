@@ -1,85 +1,200 @@
-# Codecool shop (sprint 1)
-
-## Story
-
-Everyone loves to buy and sell stuff but we need a shop for that! In this
-project the goal is to build one the [most common type of websites on the
-web](https://www.expertmarket.co.uk/web-design/different-types-of-websites): an
-online eCommerce web-application, where users can browse products, add them into
-a shopping cart, checkout items and make payments.
-
-## What are you going to learn?
-
-- how to create dynamic web pages in `Java` with `servlets`,
-- how to use the `DAO` design pattern in `Java`,
-- how to use the `Thymeleaf` templating engine.
+<!-- PROJECT LOGO -->
 
 
-## Tasks
+  <h3 align="center">🔫 Codecool weapon's store 🔫</h3>
 
-1. As a Developer, I want to have a version-controlled project, where a webserver serves requests. So that I can start developing in a sandboxed environment.
-    - Given I start up my Java web-application server, when I open `http://localhost:8888` in my browser, then ensure the server gives back an index page
+  <p align="center">
+    An awesome app to use if you want to buy a brand new weapon:
+    <br />
+    <a href="https://github.com/AiroaeiCatalin/codecool-shop"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/AiroaeiCatalin/codecool-shop">View Demo</a>
+    ·
+    <a href="https://github.com/AiroaeiCatalin/codecool-shop/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/AiroaeiCatalin/codecool-shop/issues">Request Feature</a>
+  </p>
 
-2. As a User, I want to have an index page, where I can see the list of Products within a default Product Category, so that I can browse Products within that Category.
-    - Given I have Products and a default Product Category in the application when I open the root url (`/`) then ensure I can see a list of Products with the following details: product title, description, image, price
 
-3. As a User, I want to have an index page, where I can filter Products by Product Categories so that I can browse Products within any Category.
-    - Given I have Products and Product Categories listed on the index page when I click on a Category's title then ensure it displays the Products only in the selected Category
 
-4. As a User, I want to have an index page, where I can filter Products by Suppliers so that I can browse Products by Suppliers too.
-    - Given I have Products and Suppliers listed on the index page when I click on a Supplier's name then ensure it displays the Products only for the selected Supplier
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
 
-5. As a User, I want to have a Shopping Cart so that I can add products which I want to buy.
-    - Given I have a Product list and the Products have an "Add to cart" button when I click on the "Add to cart" button then ensure it creates a new Order for storing cart data of the User and ensure it creates a new LineItem with the quanity (default: 1) and price (the price of the Product) and ensure it stores this data on the server
-    - Given I have a Product list and the Products have an "Add to cart" button when I click on the "Add to cart" button then ensure the number of cart items is displayed in the Page header
 
-6. As a User, I want to review my Shopping Cart so that I can review the items in my shopping cart before checking out so that I can see what I've already selected.
-    - Given I have a Shopping Cart with items in it when I click on the "Shopping cart" menu item in the Page header then ensure it displays the items (LineItems) with the following data: name of the Product, quantity, unit price / subtotal price
-    - Given I have a Shopping Cart with items in it when I click on the "Shopping cart" menu item in the Page header ensure the total price of all the items in the cart is displayed
 
-7. As a User, I want to edit the items in my Shopping Cart so that I can modify the items when I change my mind - by changing quantity or removing items.
-    - Given I have a Shopping Cart review page and the LineItems are displayed in a form and the quantities are displayed in input fields when I change the quantity of an item then ensure it stores the new quantity of the LineItem
-    - Given I have a Shopping Cart review page and the LineItems are displayed in a form and the quantities are displayed in input fields when I change the quantity to 0 then ensure it removes the LineItem from the cart
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-8. As a User, I want to checkout the items from the Shopping Cart so that I can order the Products.
-    - Given I have a Shopping Cart review page when I click on the "Checkout" button then ensure it asks the following data from the User: Name, Email, Phone number, Billing Address (Country, City, Zipcode, Address), Shipping Address (Country, City, Zipcode, Address)
-    - Given I have a Shopping Cart review page when I click on the "Go to Payment" button then ensure Ensure that data on the checkout form are validated
-    - Given I have a Shopping Cart review page when I click on the "Go to Payment" button and data are validated successfully then ensure that data on the checkout form are stored in the Order
-    - Given I have a Shopping Cart review page when I click on the "Go to Payment" button and data are validated successfully then ensure that it redirects to the Payment page
+BestAutoDeals is an online web-application built with React, Spring and many other frameworks and technologies, where you can find very good deals if you are interested in buying an used car. The application is very intuitive and easy to use for any user that wants to look for a car
 
-9. As a User, I want to pay for my Products so that I can complete the payment online.
-    - Given I checked out the items from the Shopping cart then I can see the total price what I have to pay
-    - Given I checked out the items from the Shopping cart then I can choose from the following payment methods: credit card, paypal
-    - Given I checked out the items from the Shopping cart and chosen the payment method then based on the selected payment method I can enter the credentials for the payment provider: card number, card holder, expiry date, code (in case of credit card), username and password (in case of paypal)
+Here's why:
+* Customers can create an account
+* Customers can add a weapon to their shopping cart
+* Customers can save their shopping caert
+* Customers can filter through different weapons categories
+* Customers can save their shopping cart
+* Customers can checkout, pay and track their order
 
-10. As a User, I want to see the result of my payment so that I can get a confirmation about my Order.
-    - Given I made a payment and there was an error in the transaction then I can see the details of the error
-    - Given I made a payment and the transaction was successful then I can see the Confirmation page with the details of the Order
-    - Given I made a payment and the transaction was successful then then ensure it saves the Order into a `JSON` file
-    - Given I made a payment and the transaction was successful then ensure it sends an email to the User about the Order
 
-11. As an Admin, I want to have a logfile about the checkout processes (per Order) so that I can see the steps of every Order and investigate issues.
-    - Given the User started a checkout process then ensure it saves all the steps and details into a JSON file (where the filename is the Order ID and Date)
+### Built With
 
-## General requirements
+#### Backend
+* [Java](https://www.java.com/en/)
+* [Jdbc](https://www.java.com/en/)
+* [PostgreSQL](https://www.postgresql.org/docs/13/app-psql.html)
 
-- Advanced OOP concepts are used in the project: inheritance, there is at least on abstract class, there is at least one interface implemented
-- The project keeps the three-layer structure: servlets handle HTTP, service objects handle business logic, and DAOs handle data access.
-- The page doesn't show a server error anytime during the review
-- All code is pushed to GitHub repository by atomic commits. The implemented feature related commits managed on separated feature branches and merged by a pull request to the `master` branch.
+#### Frontend
+* [HTML](https://html.spec.whatwg.org/multipage/)
+* [CSS](https://www.w3.org/)
+* [Bootstrap](https://getbootstrap.com/)
+* [Javascript](https://www.npmjs.com/)
 
-## Hints
+#### Version control
+* [Github](https://www.gtihub.com/)
 
-- Do not use a database, now only use in-memory storage or file storage but
-  through the DAO pattern (Data Access Object).
-- It's not required to integrate real payment services - you can use fake
-  payment implementations.
+#### Project Management
+* [Trello](https://www.atlassian.com/software/jira?&aceid=&adposition=&adgroup=89541897982&campaign=9124878150&creative=415542514747&device=c&keyword=jira&matchtype=e&network=g&placement=&ds_kids=p51242161283&ds_e=GOOGLE&ds_eid=700000001558501&ds_e1=GOOGLE&gclid=Cj0KCQiAnKeCBhDPARIsAFDTLTIUjm6m9LQssN_d15V_dYNqPiWaS_df09mdcnHPj-QkqTKrZfAjB6kaAhdEEALw_wcB&gclsrc=aw.ds)
 
-## Background materials
 
-- <i class="far fa-exclamation"></i> [Introducing servlets](project/curriculum/materials/pages/java/introducing-servlets.md)
-- <i class="far fa-exclamation"></i> [Servlet tutorial](https://www.tutorialspoint.com/servlets/servlets-form-data.htm)
-- <i class="far fa-exclamation"></i> [Java Dao pattern](https://www.baeldung.com/java-dao-pattern)
-- <i class="far fa-exclamation"></i> [Thymeleaf standard dialect](https://www.thymeleaf.org/doc/articles/standarddialect5minutes.html)
-- <i class="far fa-book-open"></i> [Thymeleaf introductions](https://www.thymeleaf.org/documentation.html#introductions)
 
+<!-- GETTING STARTED -->
+## Getting Started
+
+This application can be tested by installing all prerequisites, clone the app, run it and enjoy it!
+### Prerequisites
+
+All prerequisites must be installed, accordingly to the technologies used in this project, for example:
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+### Installation
+
+* Backend
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/AiroaeiCatalin/codecool-shop 
+   ```
+2. Open the project with the pom.xml file
+
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+Further I will shortly name, describe and visualize some main features of the app.
+### Customer application
+* Customers can create an account, browse, view and filter through various weapons
+
+![homepage](https://user-images.githubusercontent.com/37214035/153233522-cd962fa0-2446-4f7d-b52f-310f100a8772.png)
+
+
+* Register
+
+![register](https://user-images.githubusercontent.com/37214035/153236723-b618fcc3-fb82-4d21-9ba5-4dfee170400a.png
+)
+
+* Log in
+![login](https://user-images.githubusercontent.com/37214035/153233705-64f56777-14af-4b0f-b0a3-366839af1077.png)
+
+
+* Cart and save cart
+![cart](https://user-images.githubusercontent.com/37214035/153233906-f8d976cd-9a08-44e1-aba1-842bdd16b859.png)
+* Checkout
+![checkout](https://user-images.githubusercontent.com/37214035/153234015-37152d8c-8da9-418f-a778-83fe8d33a3d7.png)
+* Payment
+![payment](https://user-images.githubusercontent.com/37214035/153234092-485b2a89-40c0-4ad3-84a2-e654c296d641.png)
+* Track
+![Track](https://user-images.githubusercontent.com/37214035/153234154-01e2c58e-2ac6-4973-a42a-cf6657ca51c8.png)
+
+
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+The project development took place through 2 Agile iterations, each iteration taking 5 days. A short complete roadmap bellow:
+
+![agile-logo](https://user-images.githubusercontent.com/72221647/138440913-f67be820-c3a8-46d2-a35c-1f847acb2c48.png)
+
+
+* Sprint 1: Created core backend objects, database, services and controllers, some functionalities and some minor UI styling
+* Sprint 2: Created user registration, log in, shopping cart and save your shopping cart functionalities and some more UI styling
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+<!-- CONTACT -->
+## Contact
+
+Airoaei Catalin - [@My Github](https://github.com/AiroaeiCatalin) [@My LinkedIn](https://www.linkedin.com/in/airoaei-catalin/) - airoaei.catalin@gmail.com
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+* [Codecool Romania :thumbsup:](https://codecool.com/ro/)
+* [React Documentation](https://reactjs.org/)
+* [Spring Documentation](https://docs.spring.io/)
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/badge/Contributers-2-brightgreen
+[contributors-url]: https://github.com/marius-ceobanu/Poke-Battlez-Frontend/graphs/contributors
+[forks-shield]: https://img.shields.io/badge/Forks-0-blue
+[forks-url]: https://github.com/marius-ceobanu/Poke-Battlez-Frontend/network/members
+[stars-shield]: https://img.shields.io/badge/Stars-2-blue
+[stars-url]: https://github.com/marius-ceobanu/Poke-Battlez-Frontend/stargazers
+[issues-shield]: https://img.shields.io/github/issues/marius-ceobanu/Poke-Battlez-Frontend
+[issues-url]: https://github.com/marius-ceobanu/Poke-Battlez-Frontend/issues
+[linkedin-shield]: https://img.shields.io/twitter/url?label=Linkedin%20-%20Marius&logo=LINKEDIN&style=social&url=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fmarius-ciprian-ceobanu-3431157b
+[linkedin-marius-url]: https://www.linkedin.com/in/marius-ciprian-ceobanu-3431157b
+[github-marius-shield]: https://img.shields.io/twitter/url?label=GitHub%20-%20Marius&logo=Github&style=social&url=https%3A%2F%2Fgithub.com%2Fmarius-ceobanu
+[github-marius-url]: https://github.com/marius-ceobanu
+[github-razvan-shield]: https://img.shields.io/twitter/url?label=GitHub%20-%20Razvan&logo=Github&style=social&url=https%3A%2F%2Fgithub.com%2Frgrigore
+[github-razvan-url]: https://github.com/rgrigore
+[chat-png]: doc_images/chat.png
+[register-png]: doc_images/register.png
+[login-png]: doc_images/login.png
+[login-gif]: doc_images/login.gif
+[PM-gif]: doc_images/PM.gif
+[team-gif]: doc_images/team.gif
+[challenge-gif]: doc_images/challenge.gif
+[battle-gif]: doc_images/battle.gif
+[agile]: doc_images/agile-logo.png
