@@ -97,7 +97,7 @@ You have to make sure you have the JDK and java 11 installed.
    ```sh
    git clone https://github.com/AiroaeiCatalin/codecool-shop 
    ```
-2. Open the project with the pom.xml file
+2. Open the project through the pom.xml file
 
 
 
