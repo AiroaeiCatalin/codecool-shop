@@ -53,7 +53,7 @@ BestAutoDeals is an online web-application built with React, Spring and many oth
 Here's why:
 * Customers can create an account
 * Customers can add a weapon to their shopping cart
-* Customers can save their shopping caert
+* Customers can save their shopping cart
 * Customers can filter through different weapons categories
 * Customers can save their shopping cart
 * Customers can checkout, pay and track their order
